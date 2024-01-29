@@ -78,9 +78,12 @@ app.use(cors({
 }))
 
 app.get('/preview', (req, res) => {
-    res.send('Yo!')
-    res.writeHead(200,{
-        'Content-Type': 'application/json'
-    })
-})
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Allow any domain
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    res.send('Yo!');
+});
+
 app.listen(process.env.PORT || 3000)
