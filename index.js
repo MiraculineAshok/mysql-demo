@@ -68,8 +68,15 @@
 //     console.log(`Server is running on port 9000.`);
 // });
 
-const express = require('express')
+const express = require('express');
+const cors = require("cors")
 const app = express()
+
+app.use(cors({
+    origin :'https://mirastodo.netlify.app/',
+    credentials: true
+}))
+
 app.get('/preview', (req, res) => {
     console.log("Just got a request!")
     res.send('Yo!')
