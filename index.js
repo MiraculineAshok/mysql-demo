@@ -78,9 +78,9 @@ app.use(cors({
 }))
 
 app.get('/preview', (req, res) => {
+    res.send('Yo!')
     res.writeHead(200,{
         'Content-Type': 'application/json'
     })
-    res.send('Yo!')
 })
 app.listen(process.env.PORT || 3000)
