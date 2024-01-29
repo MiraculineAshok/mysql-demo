@@ -31,7 +31,8 @@ app.get("/api/getTask", function (req, res) {
     //     console.log(result);
     //     res.json(result);
     // });
-    res.json({message:"hello"})
+    res.send("Hello world")
+    // res.json({message:"hello"})
 });
 
 app.post("/api/addTask", function (req, res) {
