@@ -5,7 +5,13 @@ const app = express();
 const mySql = require("mysql");
 const port = process.env.PORT || 9000;
 
-app.use(cors());
+app.use(cors({
+    origin :'https://mirastodo.netlify.app/',
+    credentials: true
+}
+   
+
+));
 app.use(express.json());
 
 var con = mySql.createConnection({
@@ -19,12 +25,13 @@ con.connect(function (err) {
 });
 
 app.get("/api/getTask", function (req, res) { 
-    var sql = "SELECT * FROM tasks";
-    con.query(sql, function (err, result) {
-        if (err) throw err;
-        console.log(result);
-        res.json(result);
-    });
+    // var sql = "SELECT * FROM tasks";
+    // con.query(sql, function (err, result) {
+    //     if (err) throw err;
+    //     console.log(result);
+    //     res.json(result);
+    // });
+    res.json({message:"hello"})
 });
 
 app.post("/api/addTask", function (req, res) {
