@@ -83,7 +83,7 @@ app.get('/preview', (req, res) => {
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     res.setHeader('Access-Control-Allow-Credentials', true);
 
-    res.send('Yo!');
+    res.json({"dscd":"dcds"});
 });
 
 app.listen(process.env.PORT || 3000)
